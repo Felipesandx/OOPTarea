@@ -6,17 +6,11 @@ public class Main {
 		//claseRectangulo();
 		//claseProducto();
 		//claseCuenta();
+		//claseLibro();
+		claseCalculadora();
 		
-		Libro[] libros = {
-				new Libro("El Señor de los Anillos", "Tolkien", 500),
-			    new Libro("El Principito", "Saint-Exupéry", 96),
-			    new Libro("1984", "George Orwell", 328),
-		};
 		
-		for (Libro libro: libros) {
-			System.out.println(libro.getTitulo() + ": " + 
-                    (libro.esLargo() ? "Largo" : "Corto"));
-		}
+		
 	}
 		
 	public static void clasePersona() {
@@ -54,6 +48,30 @@ public class Main {
 		System.out.println("Saldo despues de la transferencia " + cuenta1.getSaldo());
 		cuenta1.retirar(8000);
 		System.out.println("Saldo despues del retiro " + cuenta1.getSaldo());
+	}
+	public static void claseLibro() {
+		
+		Libro[] libros = {
+				new Libro("El Señor de los Anillos", "Tolkien", 500),
+			    new Libro("El Principito", "Saint-Exupéry", 96),
+			    new Libro("1984", "George Orwell", 328),
+		};
+		
+		for (Libro libro: libros) {
+			System.out.println(libro.getTitulo() + ": " + 
+                    (libro.esLargo() ? "Largo" : "Corto"));
+		}
+	}
+	public static void claseCalculadora() {
+		
+		Calculadora calc1 = new Calculadora(4,5);
+		System.out.println("La suma es: " + calc1.sumar());
+		System.out.println("La resta es: " + calc1.restar());
+		System.out.println("La multiplicación es: " + calc1.multiplicar());
+		calc1.setNumero2(0);
+		System.out.println(calc1.dividir());
+		calc1.setNumero2(2);
+		System.out.println("La division es: " + calc1.dividir());
 	}
 
 }
