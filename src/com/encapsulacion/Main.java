@@ -4,7 +4,15 @@ public class Main {
 	public static void main(String[] args) {
 		//clasePersona();
 		//claseRectangulo();
-		claseProducto();
+		//claseProducto();
+		
+		Cuenta cuenta1 = new Cuenta ("Fernando Medina", 1000);
+		
+		System.out.println("Saldo antes de la transferencia " + cuenta1.getSaldo());
+		cuenta1.depositar(500);
+		System.out.println("Saldo despues de la transferencia " + cuenta1.getSaldo());
+		cuenta1.retirar(8000);
+		System.out.println("Saldo despues del retiro " + cuenta1.getSaldo());
 	}
 		
 	public static void clasePersona() {
