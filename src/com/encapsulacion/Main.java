@@ -5,14 +5,18 @@ public class Main {
 		//clasePersona();
 		//claseRectangulo();
 		//claseProducto();
+		//claseCuenta();
 		
-		Cuenta cuenta1 = new Cuenta ("Fernando Medina", 1000);
+		Libro[] libros = {
+				new Libro("El Señor de los Anillos", "Tolkien", 500),
+			    new Libro("El Principito", "Saint-Exupéry", 96),
+			    new Libro("1984", "George Orwell", 328),
+		};
 		
-		System.out.println("Saldo antes de la transferencia " + cuenta1.getSaldo());
-		cuenta1.depositar(500);
-		System.out.println("Saldo despues de la transferencia " + cuenta1.getSaldo());
-		cuenta1.retirar(8000);
-		System.out.println("Saldo despues del retiro " + cuenta1.getSaldo());
+		for (Libro libro: libros) {
+			System.out.println(libro.getTitulo() + ": " + 
+                    (libro.esLargo() ? "Largo" : "Corto"));
+		}
 	}
 		
 	public static void clasePersona() {
@@ -40,6 +44,16 @@ public class Main {
 	    System.out.println("Después del descuento: " + prod1);
 	    System.out.println("Precio final: " + precioFinal);
 		
+	}
+	public static void claseCuenta() {
+		
+		Cuenta cuenta1 = new Cuenta ("Fernando Medina", 1000);
+		
+		System.out.println("Saldo antes de la transferencia " + cuenta1.getSaldo());
+		cuenta1.depositar(500);
+		System.out.println("Saldo despues de la transferencia " + cuenta1.getSaldo());
+		cuenta1.retirar(8000);
+		System.out.println("Saldo despues del retiro " + cuenta1.getSaldo());
 	}
 
 }
