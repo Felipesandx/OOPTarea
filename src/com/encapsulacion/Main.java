@@ -3,11 +3,8 @@ package com.encapsulacion;
 public class Main {
 	public static void main(String[] args) {
 		//clasePersona();
-		Rectangulo r1 = new Rectangulo(10,25);
-		Rectangulo r2 = new Rectangulo (50, 5);
-		
-		r1.compararCon(r2);
-		
+		//claseRectangulo();
+		claseProducto();
 	}
 		
 	public static void clasePersona() {
@@ -18,6 +15,22 @@ public class Main {
 		p1.mostrar();
 		p2.mostrar();
 		p3.mostrar();
+		
+	}
+	public static void claseRectangulo() {
+		Rectangulo r1 = new Rectangulo(14,25);
+		Rectangulo r2 = new Rectangulo (50, 5);
+		
+		r1.compararCon(r2);
+	}
+	public static void  claseProducto() {
+		Producto prod1 = new Producto(1, "Laptop", 1000.0);
+		   
+	    System.out.println("Antes del descuento: " + prod1);
+	    double precioFinal = prod1.aplicarDescuento(0.10);
+	    
+	    System.out.println("Después del descuento: " + prod1);
+	    System.out.println("Precio final: " + precioFinal);
 		
 	}
 
