@@ -1,17 +1,60 @@
 package com.encapsulacion;
 
+import java.util.Scanner;
+
 public class Main {
 	public static void main(String[] args) {
-		//clasePersona();
-		//claseRectangulo();
-		//claseProducto();
-		//claseCuenta();
-		//claseLibro();
-		claseCalculadora();
 		
-		
-		
-	}
+
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        do {
+            System.out.println("\n - MENU - ");
+            System.out.println("1. Clase Persona");
+            System.out.println("2. Clase Rectangulo");
+            System.out.println("3. Clase Producto");
+            System.out.println("4. Clase Cuenta");
+            System.out.println("5. Clase Libro");
+            System.out.println("6. Clase Calculadora");
+            System.out.println("7. Clase Fecha");
+            System.out.println("0. Salir");
+            System.out.print("Seleccione una opcion: ");
+
+            opcion = scanner.nextInt();
+
+            switch (opcion) {
+            case 0:
+            	System.out.println("Saliendo del programa...");
+                break;
+            case 1: 
+            	 clasePersona();
+            	 break;
+            case 2: 
+            	claseRectangulo();
+            	break;
+            case 3: 
+            	claseProducto();
+            	break;
+            case 4:
+            	claseCuenta();
+            	break;
+            case 5:
+            	claseLibro();
+            	break;
+            case 6:
+            	claseCalculadora();
+            	break;
+            case 7:
+            	claseFecha();
+            	break;
+            	default: 
+            		System.out.println("Opcion invalida");
+            }
+            
+        }while (opcion !=0);
+        
+        scanner.close();
+        }
 		
 	public static void clasePersona() {
 		Persona p1 = new Persona("Juan", "Sandoval", 20);
@@ -72,6 +115,15 @@ public class Main {
 		System.out.println(calc1.dividir());
 		calc1.setNumero2(2);
 		System.out.println("La division es: " + calc1.dividir());
+	}
+	public static void claseFecha() {
+		Fecha fecha1 = new Fecha(31,1,2006);
+		Fecha fecha2 = new Fecha(19,13,1999);
+		Fecha fecha3 = new Fecha(-1,12,2017);
+		
+		fecha1.esValida();
+		fecha2.esValida();
+		fecha3.esValida();
 	}
 
 }
